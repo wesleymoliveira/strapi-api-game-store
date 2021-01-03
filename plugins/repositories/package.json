@@ -1,0 +1,28 @@
+{
+  "name": "strapi-plugin-repositories",
+  "version": "0.0.0",
+  "description": "A List of all repositories in React Avançado Course.",
+  "strapi": {
+    "name": "Repositories",
+    "icon": "code",
+    "description": "A List of all repositories in React Avançado Course."
+  },
+  "dependencies": {},
+  "author": {
+    "name": "Wesley M Oliveira",
+    "email": "oliveirawesleyrj@gmail.com",
+    "url": "https://github.com/wesleymoliveira"
+  },
+  "maintainers": [
+    {
+      "name": "A Strapi developer",
+      "email": "oliveirawesleyrj@gmail.com",
+      "url": "https://github.com/wesleymoliveira"
+    }
+  ],
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
