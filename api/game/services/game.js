@@ -6,7 +6,7 @@
  */
 const axios = require("axios");
 const slugify = require("slugify");
-const query = require("querystring");
+const qs = require("querystring");
 
 function Exception(e) {
   return { e, data: e.data && e.data.errors && e.data.errors }; //retorna qualquer estrutura de errors possíveis vindos da Promisse
@@ -158,7 +158,7 @@ module.exports = {
   populate: async (params) => {
     try {
       //console.log(params); //test to check if the params are there
-      const gogApiUrl = `https://www.gog.com/games/ajax/filtered?mediaType=game&${query.stringfy(
+      const gogApiUrl = `https://www.gog.com/games/ajax/filtered?mediaType=game&${qs.stringify(
         params
       )}`;
 
