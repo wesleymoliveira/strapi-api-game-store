@@ -166,8 +166,8 @@ module.exports = {
         data: { products },
       } = await axios.get(gogApiUrl);
 
-      await createManyToManyData([products]);
-      await createGames([products]);
+      await createManyToManyData(products);
+      await createGames(products);
 
       //await create(products[3].publisher, "publisher");
       //await create(products[3].developer, "developer");
