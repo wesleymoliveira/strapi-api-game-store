@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://strapi.io/documentation/developer-docs/latest/migration-guide/migration-guide-3.3.x-to-3.4.0.html
+HostUrl=https://strapi.io/documentation/developer-docs/assets/migrations/scripts/migrate-3.4.0.js
