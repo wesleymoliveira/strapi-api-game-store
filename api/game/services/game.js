@@ -6,6 +6,7 @@
  */
 const axios = require("axios");
 const slugify = require("slugify");
+const query = require("querystring");
 
 function Exception(e) {
   return { e, data: e.data && e.data.errors && e.data.errors }; //retorna qualquer estrutura de errors possíveis vindos da Promisse
@@ -156,30 +157,17 @@ async function createGames(products) {
 module.exports = {
   populate: async (params) => {
     try {
-      const gogApiUrl = `https://www.gog.com/games/ajax/filtered?mediaType=game&page=1&sort=popularity`;
+      //console.log(params); //test to check if the params are there
+      const gogApiUrl = `https://www.gog.com/games/ajax/filtered?mediaType=game&${query.stringfy(
+        params
+      )}`;
 
       const {
         data: { products },
       } = await axios.get(gogApiUrl);
 
-      //console.log(products[0]);
-
-      await createManyToManyData([
-        products[0],
-        products[1],
-        products[2],
-        products[3],
-        products[4],
-        products[10],
-      ]);
-      await createGames([
-        products[0],
-        products[1],
-        products[2],
-        products[3],
-        products[4],
-        products[10],
-      ]);
+      await createManyToManyData([products]);
+      await createGames([products]);
 
       //await create(products[3].publisher, "publisher");
       //await create(products[3].developer, "developer");
